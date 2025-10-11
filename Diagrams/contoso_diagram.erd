@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="contoso_diagram.erd">
+	<entities>
+		<data-source id="postgres-jdbc-199bfb9af31-cd613b6063e6da2">
+			<entity id="1" name="currencyexchange" fq-name="public.currencyexchange" order="0" x="24" y="242">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+			<entity id="2" name="customer" fq-name="public.customer" order="1" x="61" y="774">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+			<entity id="3" name="date" fq-name="public.&quot;date&quot;" order="2" x="243" y="51">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+			<entity id="4" name="product" fq-name="public.product" order="3" x="288" y="724">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+			<entity id="5" name="sales" fq-name="public.sales" order="4" x="53" y="393">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+			<entity id="6" name="store" fq-name="public.store" order="5" border-width="3" x="291" y="448">
+				<path name="public"/>
+				<path name="contoso_100k"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="sales_customerkey_fkey" fq-name="public.sales.sales_customerkey_fkey" type="fk" pk-ref="2" fk-ref="5"/>
+		<relation name="sales_deliverydate_fkey" fq-name="public.sales.sales_deliverydate_fkey" type="fk" pk-ref="3" fk-ref="5"/>
+		<relation name="sales_orderdate_fkey" fq-name="public.sales.sales_orderdate_fkey" type="fk" pk-ref="3" fk-ref="5"/>
+		<relation name="sales_productkey_fkey" fq-name="public.sales.sales_productkey_fkey" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="sales_storekey_fkey" fq-name="public.sales.sales_storekey_fkey" type="fk" pk-ref="6" fk-ref="5"/>
+	</relations>
+</diagram>
